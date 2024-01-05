@@ -3,7 +3,7 @@ import FrontEndSection from "./components/front-end-section";
 import BackEndSection from "./components/back-end-section";
 import DataBaseSection from "./components/database-section";
 import VersionControlSection from "./components/version-control-section";
-import InfrastructureSection from "./components/Infrastructure-section";
+import InfrastructureSection from "./components/infrastructure-section";
 import AnalysisToolsSection from "./components/analysis-tools-section";
 import ApplicationsSection from "./components/applications-section";
 
