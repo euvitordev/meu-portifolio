@@ -12,8 +12,8 @@ export default function Page() {
     <main className="flex min-h-screen w-full flex-col items-center p-8 dark:bg-zinc-900">
       <Header />
 
-      <div className="animate-fadeAndSlideUp mt-16 flex w-full max-w-5xl flex-col gap-16 max-lg:mt-4">
-        <div className="flex w-full flex-col justify-start gap-4">
+      <div className="animate-fadeAndSlideUp flex w-full max-w-5xl flex-col gap-16 max-lg:mt-4">
+        <div className="mt-8 flex w-full flex-col justify-start gap-4">
           <h1 className="text-4xl font-bold max-lg:text-3xl">
             Tecnologias e Ferramentas
           </h1>

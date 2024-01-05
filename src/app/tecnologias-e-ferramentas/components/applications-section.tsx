@@ -86,14 +86,19 @@ export default function ApplicationsSection() {
               href={item.link}
               target="_blank"
               key={index}
-              className="flex items-center gap-4 rounded-lg p-4 text-base font-bold shadow-2xl transition-all delay-75 duration-500 ease-in-out lg:hover:scale-110"
+              className="flex items-center gap-4 rounded-lg p-4 text-base font-bold shadow-2xl transition-all delay-75 duration-500 ease-in-out max-lg:p-2 max-lg:text-sm lg:hover:scale-110"
               style={{ backgroundColor: item.cardColor }}
             >
               <div
                 className={`rounded-md p-2`}
                 style={{ backgroundColor: item.color }}
               >
-                <Image width={30} alt="" src={item.icon} className="" />
+                <Image
+                  width={30}
+                  alt=""
+                  src={item.icon}
+                  className="max-lg:w-6"
+                />
               </div>
 
               {item.text}

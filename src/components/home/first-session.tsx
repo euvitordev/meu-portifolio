@@ -122,12 +122,12 @@ export default function FirstSession() {
         {/*  */}
         <div className="animate-fadeAndSlideUp mt-12 flex w-full max-w-md flex-col items-start justify-start gap-8">
           <div className="flex w-full items-center justify-between gap-4">
-            <span className="text-xl font-bold max-md:text-lg">
+            <span className="text-xl font-bold max-lg:text-base">
               💻 Tecnologias e Ferramentas
             </span>
             <Link
               href="/tecnologias-e-ferramentas"
-              className="flex cursor-pointer items-center gap-2 text-blue-500 underline-offset-8 opacity-80 transition-all delay-75 duration-300 ease-in-out hover:underline hover:opacity-100"
+              className="max-lg:text-bsm hover:opacity-sm flex cursor-pointer items-center gap-2 text-blue-500 underline-offset-8 opacity-80 transition-all delay-75 duration-300 ease-in-out hover:underline"
             >
               Ver todos <ChevronRight size={18} />
             </Link>
@@ -140,7 +140,7 @@ export default function FirstSession() {
                 width={50}
                 height={50}
                 alt="exemplo"
-                className="cursor-pointer rounded-xl shadow-2xl shadow-white/5 transition-all delay-75 duration-300 ease-in-out hover:scale-125 max-md:w-11"
+                className="cursor-pointer rounded-xl shadow-2xl shadow-white/5 transition-all delay-75 duration-300 ease-in-out hover:scale-125 max-lg:w-10"
               />
             ))}
           </div>
