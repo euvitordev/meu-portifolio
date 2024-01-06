@@ -46,9 +46,9 @@ export default function ProjectSession() {
 
           <a
             href="#"
-            className="flex cursor-pointer items-center gap-2 text-blue-500 underline-offset-8 opacity-80 transition-all delay-75 duration-300 ease-in-out hover:underline hover:opacity-100"
+            className="flex cursor-pointer items-center gap-2 font-bold text-green-500 underline-offset-8 opacity-80 transition-all delay-75 duration-300 ease-in-out hover:underline hover:opacity-100"
           >
-            Ver todos <ChevronRight size={18} />
+            Mostrar tudo <ChevronRight size={18} />
           </a>
         </div>
 

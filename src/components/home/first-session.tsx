@@ -122,14 +122,12 @@ export default function FirstSession() {
         {/*  */}
         <div className="animate-fadeAndSlideUp mt-12 flex w-full max-w-md flex-col items-start justify-start gap-8">
           <div className="flex w-full items-center justify-between gap-4">
-            <span className="text-xl font-bold max-lg:text-base">
-              💻 Tecnologias e Ferramentas
-            </span>
+            <span className="text-xl font-bold">💻 Tecnologias</span>
             <Link
               href="/tecnologias-e-ferramentas"
-              className="max-lg:text-bsm hover:opacity-sm flex cursor-pointer items-center gap-2 text-blue-500 underline-offset-8 opacity-80 transition-all delay-75 duration-300 ease-in-out hover:underline"
+              className="flex cursor-pointer items-center gap-2 font-bold text-green-500 underline-offset-8 opacity-80 transition-all delay-75 duration-300 ease-in-out hover:underline hover:opacity-100"
             >
-              Ver todos <ChevronRight size={18} />
+              Mostrar tudo <ChevronRight size={18} />
             </Link>
           </div>
           <div className="flex w-full gap-4">
