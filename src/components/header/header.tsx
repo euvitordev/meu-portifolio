@@ -1,10 +1,22 @@
+"use client";
 import Link from "next/link";
-import { AlignRight, Coffee, Settings } from "lucide-react";
-import { Button } from "../ui/button";
+import { Coffee, PanelRight, Settings } from "lucide-react";
 import { DropdownMenuDemo } from "../components-ui/dropdown-menu-demo";
+import { HeaderSheet } from "../components-ui/header-sheet";
+import { useState, useEffect } from "react";
 
 export default function Header() {
+  const [currentPath, setCurrentPath] = useState("");
+
+  useEffect(() => {
+    setCurrentPath(window.location.pathname);
+  }, []);
+
   const navLinks = [
+    {
+      name: "Página inicial",
+      link: "/",
+    },
     {
       name: "Sobre min",
       link: "#",
@@ -14,7 +26,7 @@ export default function Header() {
       link: "#",
     },
     {
-      name: "Tecnologias e Ferramentas",
+      name: "Tecnologias",
       link: "/tecnologias-e-ferramentas",
     },
     {
@@ -43,7 +55,11 @@ export default function Header() {
               <Link
                 key={index}
                 href={item.link}
-                className="cursor-pointer underline-offset-8 opacity-50 transition-all delay-75 duration-300 ease-in-out hover:underline hover:opacity-100"
+                className={`cursor-pointer underline-offset-8 opacity-50 transition-all delay-75 duration-300 ease-in-out hover:underline hover:opacity-100 ${
+                  currentPath === item.link
+                    ? "underline underline-offset-8 opacity-100" // Aplica o sublinhado se for a página atual
+                    : "opacity-50 hover:underline hover:opacity-100"
+                }`}
               >
                 {item.name}
               </Link>
@@ -56,9 +72,9 @@ export default function Header() {
                 className="transition-all delay-100 duration-500 ease-in-out hover:rotate-180"
               />
             </DropdownMenuDemo>
-            <Button variant="ghost" size="icon" className="hidden max-lg:flex">
-              <AlignRight size={18} />
-            </Button>
+            <HeaderSheet>
+              <PanelRight size={18} />
+            </HeaderSheet>
           </div>
         </div>
       </div>
