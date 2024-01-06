@@ -21,22 +21,9 @@ import Link from "next/link";
 
 export function HeaderSheet({ children }: { children: React.ReactNode }) {
   const [currentPath, setCurrentPath] = useState("");
-  const [isHeaderFixed, setIsHeaderFixed] = useState(false);
 
   useEffect(() => {
     setCurrentPath(window.location.pathname);
-
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsHeaderFixed(true);
-      } else {
-        setIsHeaderFixed(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
   }, []);
 
   const isProjectsPage = (path: string) => {
