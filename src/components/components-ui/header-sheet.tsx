@@ -39,10 +39,10 @@ export function HeaderSheet({ children }: { children: React.ReactNode }) {
     };
   }, []);
 
-  // Função para verificar se a URL atual corresponde à página de Projetos
-  const isProjectsPage = (path) => {
+  const isProjectsPage = (path: string) => {
     return path.includes("/projetos");
   };
+
   const navLinks = [
     {
       name: "Início",
