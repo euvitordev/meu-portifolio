@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import ImageFreeCalc from "../../../public/images/free-calc-home.png";
 import ImageMimoCep from "../../../public/images/mimo-cep.png";
 import ImageHabits from "../../../public/images/habits.jpg";
+import Link from "next/link";
 
 export default function ProjectSession() {
   const projectPreview = [
@@ -44,12 +45,12 @@ export default function ProjectSession() {
         <div className="flex items-center justify-between">
           <h2 className="text-2xl font-bold">📂 Meus projetos</h2>
 
-          <a
-            href="#"
+          <Link
+            href="/projetos"
             className="flex cursor-pointer items-center gap-2 font-bold text-green-600 underline-offset-8 opacity-80 transition-all delay-75 duration-300 ease-in-out hover:underline hover:opacity-100 dark:text-green-500"
           >
             Mostrar tudo <ChevronRight size={18} />
-          </a>
+          </Link>
         </div>
 
         <div className="flex flex-col gap-10">

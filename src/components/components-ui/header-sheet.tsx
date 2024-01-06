@@ -21,23 +21,40 @@ import Link from "next/link";
 
 export function HeaderSheet({ children }: { children: React.ReactNode }) {
   const [currentPath, setCurrentPath] = useState("");
+  const [isHeaderFixed, setIsHeaderFixed] = useState(false);
 
   useEffect(() => {
     setCurrentPath(window.location.pathname);
+
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsHeaderFixed(true);
+      } else {
+        setIsHeaderFixed(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
+  // Função para verificar se a URL atual corresponde à página de Projetos
+  const isProjectsPage = (path) => {
+    return path.includes("/projetos");
+  };
   const navLinks = [
     {
-      name: "Página inicial",
+      name: "Início",
       link: "/",
     },
     {
-      name: "Sobre min",
+      name: "Sobre",
       link: "#",
     },
     {
       name: "Projetos",
-      link: "#",
+      link: "/projetos",
     },
     {
       name: "Tecnologias",
@@ -52,6 +69,7 @@ export function HeaderSheet({ children }: { children: React.ReactNode }) {
       link: "#",
     },
   ];
+
   const contactMe = [
     {
       text: "E-mail (Geral)",
@@ -104,10 +122,12 @@ export function HeaderSheet({ children }: { children: React.ReactNode }) {
             <Link
               key={index}
               href={item.link}
-              className={`group flex items-center justify-between text-2xl font-bold underline-offset-8 opacity-50 transition-all delay-75 duration-300 ease-in-out hover:underline hover:opacity-100 ${
-                currentPath === item.link
+              className={`group flex items-center justify-between text-2xl font-bold underline-offset-8 transition-all delay-75 duration-300 ease-in-out hover:underline ${
+                isProjectsPage(currentPath) && item.name === "Projetos"
                   ? "underline underline-offset-8 opacity-100"
-                  : "opacity-50 hover:underline hover:opacity-100"
+                  : currentPath === item.link
+                    ? "underline underline-offset-8 opacity-100"
+                    : "opacity-50 hover:underline hover:opacity-100"
               }`}
             >
               {item.name}

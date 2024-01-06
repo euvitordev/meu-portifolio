@@ -25,18 +25,23 @@ export default function Header() {
     };
   }, []);
 
+  // Função para verificar se a URL atual corresponde à página de Projetos
+  const isProjectsPage = (path) => {
+    return path.includes("/projetos");
+  };
+
   const navLinks = [
     {
-      name: "Página inicial",
+      name: "Início",
       link: "/",
     },
     {
-      name: "Sobre min",
+      name: "Sobre",
       link: "#",
     },
     {
       name: "Projetos",
-      link: "#",
+      link: "/projetos",
     },
     {
       name: "Tecnologias",
@@ -73,10 +78,12 @@ export default function Header() {
               <Link
                 key={index}
                 href={item.link}
-                className={`cursor-pointer underline-offset-8 opacity-50 transition-all delay-75 duration-300 ease-in-out hover:underline hover:opacity-100 ${
-                  currentPath === item.link
+                className={`cursor-pointer font-bold underline-offset-8 transition-all delay-75 duration-300 ease-in-out hover:underline hover:opacity-100 ${
+                  isProjectsPage(currentPath) && item.name === "Projetos"
                     ? "underline underline-offset-8 opacity-100"
-                    : "opacity-50 hover:underline hover:opacity-100"
+                    : currentPath === item.link
+                      ? "underline underline-offset-8 opacity-100"
+                      : "opacity-50 hover:underline hover:opacity-100"
                 }`}
               >
                 {item.name}
