@@ -61,13 +61,13 @@ export default function ContactSession() {
             @euvitordev.
           </a>
         </p>
-        <div className="mt-4 grid grid-cols-2 gap-2 max-md:flex max-md:flex-col">
+        <div className="mt-4 grid grid-cols-2 gap-4 max-md:flex max-md:flex-col">
           {contactMe.map((item, index) => (
             <a
               key={index}
               href={item.link}
               target="_blank"
-              className="light:border-zinc-300 light:hover:border-zinc-950 flex w-full cursor-pointer items-center justify-between rounded-md border-2 p-2.5 underline-offset-8 opacity-50 transition-all delay-75 duration-300 ease-in-out hover:underline hover:opacity-100 dark:border-zinc-600 dark:hover:border-zinc-50"
+              className="ease-in-out-black flex w-full cursor-pointer items-center justify-between rounded-md border-2 border-zinc-300  p-2.5 underline-offset-8 opacity-50 transition-all delay-75 duration-300 hover:border-zinc-950 hover:underline hover:opacity-100 dark:border-zinc-600 dark:hover:border-zinc-50"
             >
               <div className="flex items-center gap-2">
                 {item.icon}

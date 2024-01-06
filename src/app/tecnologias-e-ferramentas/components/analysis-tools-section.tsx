@@ -8,14 +8,14 @@ export default function AnalysisToolsSection() {
       text: "Google Analytics",
       icon: IconGoogleAnalytics,
       color: "rgb(76,56,26)",
-      cardColor: "rgb(76,56,26, 0.2)",
+      cardColor: "rgb(76,56,26, 0.1)",
       link: "https://marketingplatform.google.com/about/analytics/",
     },
     {
       text: "Vercel Analytics",
       icon: IconVercel,
       color: "rgb(49,49,51)",
-      cardColor: "rgb(49,49,51, 0.2)",
+      cardColor: "rgb(49,49,51, 0.1)",
       link: "https://vercel.com/analytics",
     },
   ];
@@ -30,7 +30,7 @@ export default function AnalysisToolsSection() {
               href={item.link}
               target="_blank"
               key={index}
-              className="flex items-center gap-4 rounded-lg p-4 text-base font-bold shadow-2xl transition-all delay-75 duration-500 ease-in-out max-lg:p-2 max-lg:text-sm lg:hover:scale-110"
+              className="flex items-center gap-4 rounded-lg border-2 border-zinc-200 p-4 text-base font-bold transition-all delay-75 duration-500 ease-in-out hover:border-zinc-950 max-lg:p-2 max-lg:text-sm lg:hover:scale-110 dark:border-zinc-600/10 dark:hover:border-zinc-50"
               style={{ backgroundColor: item.cardColor }}
             >
               <div

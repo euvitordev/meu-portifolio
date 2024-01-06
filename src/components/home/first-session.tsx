@@ -125,7 +125,7 @@ export default function FirstSession() {
             <span className="text-xl font-bold">💻 Tecnologias</span>
             <Link
               href="/tecnologias-e-ferramentas"
-              className="flex cursor-pointer items-center gap-2 font-bold text-green-500 underline-offset-8 opacity-80 transition-all delay-75 duration-300 ease-in-out hover:underline hover:opacity-100"
+              className="flex cursor-pointer items-center gap-2 font-bold text-green-600 underline-offset-8 opacity-80 transition-all delay-75 duration-300 ease-in-out hover:underline hover:opacity-100 dark:text-green-500"
             >
               Mostrar tudo <ChevronRight size={18} />
             </Link>

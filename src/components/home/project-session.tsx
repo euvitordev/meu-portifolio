@@ -46,7 +46,7 @@ export default function ProjectSession() {
 
           <a
             href="#"
-            className="flex cursor-pointer items-center gap-2 font-bold text-green-500 underline-offset-8 opacity-80 transition-all delay-75 duration-300 ease-in-out hover:underline hover:opacity-100"
+            className="flex cursor-pointer items-center gap-2 font-bold text-green-600 underline-offset-8 opacity-80 transition-all delay-75 duration-300 ease-in-out hover:underline hover:opacity-100 dark:text-green-500"
           >
             Mostrar tudo <ChevronRight size={18} />
           </a>
@@ -73,7 +73,7 @@ export default function ProjectSession() {
                     <a href={item.link} target="_blank" className="">
                       <Button
                         variant="ghost"
-                        className="flex items-center gap-2 border-2 border-white font-bold transition-all delay-100 duration-300 ease-in-out hover:bg-white hover:text-black"
+                        className="flex items-center gap-2 border-2 border-black font-bold transition-all delay-100 duration-300 ease-in-out hover:bg-black hover:text-white dark:border-white dark:hover:bg-white dark:hover:text-black"
                       >
                         <ArrowUpRight size={18} />
                         Visitar

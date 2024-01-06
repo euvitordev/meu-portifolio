@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -5,21 +6,53 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuPortal,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { MoonIcon, SunIcon } from "lucide-react";
+import { AppWindowIcon, MoonIcon, SunIcon } from "lucide-react";
+import { useTheme } from "next-themes";
 
 export function DropdownMenuDemo({ children }: { children: React.ReactNode }) {
+  const { theme, setTheme } = useTheme();
+
+  const themes = [
+    { id: "system", name: "Padrão", icon: <AppWindowIcon size={18} /> },
+    { id: "light", name: "Claro", icon: <SunIcon size={18} /> },
+    { id: "dark", name: "Escuro", icon: <MoonIcon size={18} /> },
+  ];
+
+  const colors = [
+    {
+      id: "zinc",
+      name: "Zinco",
+      icon: "⚪",
+    },
+    {
+      id: "blue",
+      name: "Azul",
+      icon: "🔵",
+    },
+    {
+      id: "green",
+      name: "Verde",
+      icon: "🟢",
+    },
+    {
+      id: "orange",
+      name: "Laranja",
+      icon: "🟠",
+    },
+    {
+      id: "dracula",
+      name: "Dracula",
+      icon: "🟣",
+    },
+  ];
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size={"icon"}>
+        <Button variant="ghost" size={"icon"} className="group">
           {children}
         </Button>
       </DropdownMenuTrigger>
@@ -28,44 +61,33 @@ export function DropdownMenuDemo({ children }: { children: React.ReactNode }) {
         <DropdownMenuSeparator />
         <DropdownMenuLabel>Tema</DropdownMenuLabel>
         <DropdownMenuGroup>
-          <DropdownMenuItem disabled>
-            Escuro
-            <DropdownMenuShortcut>
-              <MoonIcon size={18} />
-            </DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem disabled>
-            Claro
-            <DropdownMenuShortcut>
-              <SunIcon size={18} />
-            </DropdownMenuShortcut>
-          </DropdownMenuItem>
+          {themes.map((item, index) => (
+            <DropdownMenuItem
+              key={index}
+              onClick={() => setTheme(item.id)}
+              className={
+                theme === item.id
+                  ? "active-theme cursor-pointer bg-black/80 font-bold text-white dark:bg-zinc-100 dark:text-black"
+                  : "cursor-pointer"
+              }
+            >
+              {item.name}
+              <DropdownMenuShortcut>{item.icon}</DropdownMenuShortcut>
+            </DropdownMenuItem>
+          ))}
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         {/*  */}
-        <DropdownMenuLabel>Cores</DropdownMenuLabel>
+        <DropdownMenuLabel className="flex items-center justify-between">
+          Cores <span className="font-light">( Em Breve )</span>
+        </DropdownMenuLabel>
         <DropdownMenuGroup>
-          <DropdownMenuItem disabled>
-            Zinco
-            <DropdownMenuShortcut>⚪</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem disabled>
-            Azul
-            <DropdownMenuShortcut>🔵</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem disabled>
-            Verde
-            <DropdownMenuShortcut>🟢</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem disabled>
-            Laranja
-            <DropdownMenuShortcut>🟠</DropdownMenuShortcut>
-          </DropdownMenuItem>
-
-          <DropdownMenuItem disabled>
-            Dracula
-            <DropdownMenuShortcut>🟣</DropdownMenuShortcut>
-          </DropdownMenuItem>
+          {colors.map((item, index) => (
+            <DropdownMenuItem key={index} disabled>
+              {item.name}
+              <DropdownMenuShortcut>{item.icon}</DropdownMenuShortcut>
+            </DropdownMenuItem>
+          ))}
         </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>
