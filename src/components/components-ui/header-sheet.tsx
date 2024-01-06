@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -15,10 +16,16 @@ import {
   Youtube,
   ChevronRight,
 } from "lucide-react";
-
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export function HeaderSheet({ children }: { children: React.ReactNode }) {
+  const [currentPath, setCurrentPath] = useState("");
+
+  useEffect(() => {
+    setCurrentPath(window.location.pathname);
+  }, []);
+
   const navLinks = [
     {
       name: "Página inicial",
@@ -97,7 +104,11 @@ export function HeaderSheet({ children }: { children: React.ReactNode }) {
             <Link
               key={index}
               href={item.link}
-              className="group flex items-center justify-between text-2xl font-bold underline-offset-8 opacity-50 transition-all delay-75 duration-300 ease-in-out hover:underline hover:opacity-100"
+              className={`group flex items-center justify-between text-2xl font-bold underline-offset-8 opacity-50 transition-all delay-75 duration-300 ease-in-out hover:underline hover:opacity-100 ${
+                currentPath === item.link
+                  ? "underline underline-offset-8 opacity-100"
+                  : "opacity-50 hover:underline hover:opacity-100"
+              }`}
             >
               {item.name}
               <ChevronRight className=" invisible group-hover:visible" />

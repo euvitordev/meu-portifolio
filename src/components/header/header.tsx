@@ -57,7 +57,7 @@ export default function Header() {
                 href={item.link}
                 className={`cursor-pointer underline-offset-8 opacity-50 transition-all delay-75 duration-300 ease-in-out hover:underline hover:opacity-100 ${
                   currentPath === item.link
-                    ? "underline underline-offset-8 opacity-100" // Aplica o sublinhado se for a página atual
+                    ? "underline underline-offset-8 opacity-100"
                     : "opacity-50 hover:underline hover:opacity-100"
                 }`}
               >

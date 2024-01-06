@@ -14,7 +14,7 @@ export default function Page() {
 
       <div className="animate-fadeAndSlideUp flex w-full max-w-5xl flex-col gap-16 max-lg:mt-4">
         <div className="mt-8 flex w-full flex-col justify-start gap-4">
-          <h1 className="text-4xl font-bold max-lg:text-3xl">
+          <h1 className="text-4xl font-bold max-lg:text-2xl">
             Tecnologias e Ferramentas
           </h1>
           <p className="text-lg max-lg:text-base">
