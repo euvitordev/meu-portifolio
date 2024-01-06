@@ -1,5 +1,5 @@
 import Header from "@/components/header/header";
-import { ArrowUpRight, ChevronLeft, ChevronRight, Github } from "lucide-react";
+import { ChevronLeft, ChevronRight, Github } from "lucide-react";
 import Image from "next/image";
 import ImageHome from "../../../../public/images/mimo-cep.png";
 import ImagePage from "../../../../public/images/mimo-cep.png";
