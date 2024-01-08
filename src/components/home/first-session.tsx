@@ -103,7 +103,10 @@ export default function FirstSession() {
 
         <div className="animate-fadeAndSlideUp flex w-full items-center gap-4">
           <a href="mailto:dev.vitorlucas@gmail.com">
-            <Button className="font-bold" variant="default">
+            <Button
+              className="flex items-center border-2 border-black font-bold transition-all delay-100 duration-300 ease-in-out hover:bg-transparent hover:text-black dark:border-white dark:hover:text-white"
+              variant="default"
+            >
               Entre em contato
             </Button>
           </a>

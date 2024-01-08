@@ -1,12 +1,27 @@
-import { ArrowUpRight, ChevronRight, Github } from "lucide-react";
+"use client";
+import { ArrowUpRight, ChevronRight, Github, X } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import ImageFreeCalc from "../../../public/images/free-calc-home.png";
 import ImageFuiDeCep from "../../../public/images/fui-de-cep.png";
-import ImageHabits from "../../../public/images/habits.jpg";
+import ImageHabits from "../../../public/images/habits.svg";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function ProjectSession() {
+  const [fullscreen, setFullscreen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState("");
+
+  const openFullscreen = (imageSrc: string) => {
+    setSelectedImage(imageSrc);
+    setFullscreen(true);
+  };
+
+  const closeFullscreen = () => {
+    setSelectedImage("");
+    setFullscreen(false);
+  };
+
   const projectPreview = [
     {
       title: "Fui de CEP",
@@ -58,10 +73,11 @@ export default function ProjectSession() {
             <div key={index} className="flex flex-col border-b pb-10">
               <div className="flex items-center gap-8 max-lg:flex-col">
                 <Image
+                  onClick={() => openFullscreen(item.imagePreview)}
                   width={500}
                   alt="Minha imagem de perfil"
                   src={item.imagePreview}
-                  className="rounded-2xl shadow-2xl shadow-white/10 transition-all delay-75 duration-500 ease-in-out hover:cursor-zoom-in lg:hover:scale-110"
+                  className="rounded-2xl shadow-2xl shadow-white/10 transition-all delay-75 duration-500 ease-in-out hover:cursor-zoom-in lg:hover:scale-110 xl:-skew-y-3 xl:hover:skew-y-0"
                 />
                 <div className="flex w-full flex-col gap-6 p-8">
                   <h2 className="text-xl font-bold underline-offset-8 transition-all delay-75 duration-300 ease-in-out hover:underline">
@@ -93,6 +109,28 @@ export default function ProjectSession() {
               </div>
             </div>
           ))}
+          {fullscreen && (
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90"
+              onClick={closeFullscreen}
+            >
+              <div className="relative max-h-screen max-w-screen-2xl overflow-hidden rounded-xl">
+                <Button
+                  variant={"destructive"}
+                  size={"icon"}
+                  className="absolute left-2/4 right-2/4 top-0 z-50 my-4 rounded-2xl"
+                  onClick={closeFullscreen}
+                >
+                  <X />
+                </Button>
+                <Image
+                  src={selectedImage}
+                  alt="Imagem em tela cheia"
+                  className="h-full w-full"
+                />
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </>

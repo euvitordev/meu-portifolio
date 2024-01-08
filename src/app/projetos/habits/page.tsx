@@ -1,13 +1,34 @@
+"use client";
 import Header from "@/components/header/header";
-import { ArrowUpRight, ChevronLeft, ChevronRight, Github } from "lucide-react";
+import {
+  ArrowUpRight,
+  ChevronLeft,
+  ChevronRight,
+  Github,
+  X,
+} from "lucide-react";
 import Image from "next/image";
 import ImageHome from "../../../../public/images/habits-login.png";
-import ImagePage from "../../../../public/images/habits.jpg";
+import ImagePage from "../../../../public/images/habits.svg";
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Projeto() {
+  const [fullscreen, setFullscreen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState("");
+
+  const openFullscreen = (imageSrc: string) => {
+    setSelectedImage(imageSrc);
+    setFullscreen(true);
+  };
+
+  const closeFullscreen = () => {
+    setSelectedImage("");
+    setFullscreen(false);
+  };
+
   const projectHeader = [
     {
       title: "Habits",
@@ -76,19 +97,43 @@ export default function Projeto() {
         ))}
         {projectMain.map((item, index) => (
           <div key={index} className="flex flex-col gap-10">
-            <div className="flex w-full items-center justify-center rounded-xl border-2 border-zinc-100 bg-zinc-50 p-14 dark:border-zinc-800 dark:bg-zinc-800/50">
+            <div className="flex w-full items-center justify-center rounded-2xl border-2 border-zinc-100 bg-zinc-50 p-1 dark:border-zinc-800 dark:bg-zinc-800/50">
               <Image
-                width={700}
-                alt="Minha imagem de perfil"
+                onClick={() => openFullscreen(item.image)}
+                width={1080}
+                alt="Exemplo do projeto"
                 src={item.image}
-                className="rounded-2xl shadow-2xl shadow-white/10 transition-all delay-75 duration-500 ease-in-out hover:cursor-zoom-in lg:hover:scale-125"
+                className="rounded-2xl shadow-2xl shadow-white/10 transition-all delay-75 duration-500 ease-in-out hover:cursor-zoom-in lg:hover:scale-110"
               />
             </div>
             <div className="flex w-full items-center justify-center p-2">
               <span className="max-w-xl text-center">{item.description}</span>
             </div>
+            {fullscreen && (
+              <div
+                className="fixed inset-0 z-50 flex items-center justify-center bg-white bg-opacity-90 dark:bg-black"
+                onClick={closeFullscreen}
+              >
+                <div className="relative max-h-screen max-w-screen-2xl overflow-hidden rounded-xl">
+                  <Button
+                    variant={"destructive"}
+                    size={"icon"}
+                    className="absolute left-2/4 right-2/4 top-0 z-50 my-4 rounded-2xl"
+                    onClick={closeFullscreen}
+                  >
+                    <X />
+                  </Button>
+                  <Image
+                    src={selectedImage}
+                    alt="Imagem em tela cheia"
+                    className="h-full w-full"
+                  />
+                </div>
+              </div>
+            )}
           </div>
         ))}
+
         <Link
           href={"/projetos"}
           className="group mb-10 flex cursor-pointer items-center gap-2 font-bold text-green-600 underline-offset-8 opacity-80 hover:underline hover:opacity-100 dark:text-green-500"
