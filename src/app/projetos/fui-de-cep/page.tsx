@@ -1,7 +1,7 @@
 import Header from "@/components/header/header";
 import { ChevronLeft, ChevronRight, Github } from "lucide-react";
 import Image from "next/image";
-import ImageFuiDeCep from "../../../public/images/fui-de-cep.png";
+import ImageFuiDeCep from "../../../../public/images/fui-de-cep.png";
 import Link from "next/link";
 
 export default function Projeto() {
