@@ -90,7 +90,7 @@ export default function Projeto() {
           <div key={index} className="flex flex-col gap-10">
             <div className="flex w-full items-center justify-center rounded-2xl border-2 border-zinc-100 bg-zinc-50 p-1 dark:border-zinc-800 dark:bg-zinc-800/50">
               <Image
-                onClick={() => openFullscreen(item.image)}
+                onClick={() => openFullscreen(item.image.src.toString())}
                 width={1080}
                 alt="Exemplo do projeto"
                 src={item.image}
