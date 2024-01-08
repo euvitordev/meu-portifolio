@@ -1,8 +1,8 @@
 import Header from "@/components/header/header";
 import { ArrowUpRight, ChevronLeft, ChevronRight, Github } from "lucide-react";
 import Image from "next/image";
-import ImageHome from "../../../../public/images/mimo-cep.png";
-import ImagePage from "../../../../public/images/mimo-cep.png";
+import ImageHome from "../../../../public/images/free-calc-home.png";
+import ImagePage from "../../../../public/images/free-calc-tela-1.png";
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
