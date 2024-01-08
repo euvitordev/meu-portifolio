@@ -103,7 +103,7 @@ export default function Projetos() {
                         href={item.linkPage}
                         className="flex cursor-pointer items-center gap-2 font-bold text-green-600 underline-offset-8 opacity-80 transition-all delay-75 duration-300 ease-in-out hover:underline hover:opacity-100 dark:text-green-500"
                       >
-                        Mostrar mais <ChevronRight size={18} />
+                        Mais detalhes <ChevronRight size={18} />
                       </Link>
                     </div>
                     <p className="font-medium opacity-90">{item.description}</p>
@@ -114,7 +114,7 @@ export default function Projetos() {
                           className="flex items-center gap-2 border-2 border-black font-bold transition-all delay-100 duration-300 ease-in-out hover:bg-black hover:text-white dark:border-white dark:hover:bg-white dark:hover:text-black"
                         >
                           <ArrowUpRight size={18} />
-                          Visitar
+                          Visitar site
                         </Button>
                       </a>
                       <a href={item.linkGithub} target="_blank" className="">

@@ -3,6 +3,7 @@ import ProjectSession from "./project-session";
 import ContactSession from "./contact-session";
 import MyProfile from "../../../public/img/my_profile.jpg";
 import Image from "next/image";
+import TopToButton from "../components-ui/top-to-button";
 export default function Main() {
   return (
     <>
@@ -21,6 +22,19 @@ export default function Main() {
         </div>
         <ProjectSession />
         <ContactSession />
+        <div className="flex items-center justify-between">
+          <span className="text-black/80 dark:text-white/80">
+            Feito com ❤️ por{" "}
+            <a
+              href="https://github.com/euvitordev"
+              target="_blank"
+              className="font-bold text-black underline underline-offset-8 dark:text-white"
+            >
+              Vitor Lucas
+            </a>
+          </span>
+          <TopToButton />
+        </div>
       </div>
     </>
   );

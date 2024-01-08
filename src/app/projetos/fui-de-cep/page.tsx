@@ -1,16 +1,16 @@
 "use client";
 import Header from "@/components/header/header";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, ChevronUp, X } from "lucide-react";
 import Image from "next/image";
 import ImageFuiDeCep from "../../../../public/images/fui-de-cep.png";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import TopToButton from "@/components/components-ui/top-to-button";
 
 export default function Projeto() {
   const [fullscreen, setFullscreen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
-
   const openFullscreen = (imageSrc: string) => {
     setSelectedImage(imageSrc);
     setFullscreen(true);
@@ -60,12 +60,15 @@ export default function Projeto() {
   return (
     <main className="flex min-h-screen w-full flex-col items-center p-8 dark:bg-zinc-900">
       <Header />
+
       <div className="animate-fadeAndSlideUp flex w-full max-w-5xl flex-col gap-16 max-lg:mt-4">
         {projectHeader.map((item, index) => (
           <div
             key={index}
             className="mt-20 flex w-full flex-col justify-start gap-4"
           >
+            <h1 className="text-6xl font-bold max-lg:text-4xl">{item.title}</h1>
+
             <div className="flex items-center gap-2">
               <span className="">{item.data}</span>
               <span className="">•</span>
@@ -82,7 +85,6 @@ export default function Projeto() {
               </a>
             </div>
 
-            <h1 className="text-4xl font-bold max-lg:text-2xl">{item.title}</h1>
             <p className="text-lg max-lg:text-base">{item.description}</p>
           </div>
         ))}
@@ -115,6 +117,8 @@ export default function Projeto() {
                     <X />
                   </Button>
                   <Image
+                    width={1920}
+                    height={1080}
                     src={selectedImage}
                     alt="Imagem em tela cheia"
                     className="h-full w-full"
@@ -124,16 +128,19 @@ export default function Projeto() {
             )}
           </div>
         ))}
-        <Link
-          href={"/projetos"}
-          className="group mb-10 flex cursor-pointer items-center gap-2 font-bold text-green-600 underline-offset-8 opacity-80 hover:underline hover:opacity-100 dark:text-green-500"
-        >
-          <ChevronLeft
-            size={18}
-            className="opacity-50 transition-all delay-75 duration-300 ease-in-out group-hover:opacity-100"
-          />
-          Todos os projetos
-        </Link>
+        <div className="flex w-full items-center justify-between">
+          <Link
+            href={"/projetos"}
+            className="group mb-10 flex cursor-pointer items-center gap-2 font-bold text-green-600 underline-offset-8 opacity-80 hover:underline hover:opacity-100 dark:text-green-500"
+          >
+            <ChevronLeft
+              size={18}
+              className="opacity-50 transition-all delay-75 duration-300 ease-in-out group-hover:opacity-100"
+            />
+            Voltar
+          </Link>
+          <TopToButton />
+        </div>
       </div>
     </main>
   );

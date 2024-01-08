@@ -4,6 +4,7 @@ import {
   ArrowUpRight,
   ChevronLeft,
   ChevronRight,
+  ChevronUp,
   Github,
   X,
 } from "lucide-react";
@@ -14,11 +15,11 @@ import ImagePage from "../../../../public/images/habits.svg";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useState } from "react";
+import TopToButton from "@/components/components-ui/top-to-button";
 
 export default function Projeto() {
   const [fullscreen, setFullscreen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
-
   const openFullscreen = (imageSrc: string) => {
     setSelectedImage(imageSrc);
     setFullscreen(true);
@@ -124,6 +125,8 @@ export default function Projeto() {
                     <X />
                   </Button>
                   <Image
+                    width={1920}
+                    height={1080}
                     src={selectedImage}
                     alt="Imagem em tela cheia"
                     className="h-full w-full"
@@ -134,16 +137,19 @@ export default function Projeto() {
           </div>
         ))}
 
-        <Link
-          href={"/projetos"}
-          className="group mb-10 flex cursor-pointer items-center gap-2 font-bold text-green-600 underline-offset-8 opacity-80 hover:underline hover:opacity-100 dark:text-green-500"
-        >
-          <ChevronLeft
-            size={18}
-            className="opacity-50 transition-all delay-75 duration-300 ease-in-out group-hover:opacity-100"
-          />
-          Todos os projetos
-        </Link>
+        <div className="flex w-full items-center justify-between">
+          <Link
+            href={"/projetos"}
+            className="group mb-10 flex cursor-pointer items-center gap-2 font-bold text-green-600 underline-offset-8 opacity-80 hover:underline hover:opacity-100 dark:text-green-500"
+          >
+            <ChevronLeft
+              size={18}
+              className="opacity-50 transition-all delay-75 duration-300 ease-in-out group-hover:opacity-100"
+            />
+            Voltar
+          </Link>
+          <TopToButton />
+        </div>
       </div>
     </main>
   );

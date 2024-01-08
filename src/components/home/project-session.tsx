@@ -30,6 +30,7 @@ export default function ProjectSession() {
       link: "https://fui-de-cep.vercel.app/",
       linkGithub: "https://github.com/euvitordev/fui-de-cep",
       nameVisit: "Visitar",
+      linkPage: "/projetos/fui-de-cep",
       nameDeploy: "Código-fonte",
     },
     {
@@ -40,6 +41,7 @@ export default function ProjectSession() {
       link: "https://free-calc.vercel.app/",
       linkGithub: "https://github.com/euvitordev/FreeCalc",
       nameVisit: "Visitar",
+      linkPage: "/projetos/free-calc",
       nameDeploy: "Código-fonte",
     },
     {
@@ -50,13 +52,15 @@ export default function ProjectSession() {
       link: "https://euvitordev.github.io/habit-tracker/",
       linkGithub: "https://github.com/euvitordev/habit-tracker",
       nameVisit: "Visitar",
+
+      linkPage: "/projetos/habits",
       nameDeploy: "Código-fonte",
     },
   ];
 
   return (
     <>
-      <div className="flex flex-col gap-10">
+      <div className="mt-8 flex flex-col gap-10">
         <div className="flex items-center justify-between">
           <h2 className="text-2xl font-bold">📂 Meus projetos</h2>
 
@@ -64,7 +68,7 @@ export default function ProjectSession() {
             href="/projetos"
             className="flex cursor-pointer items-center gap-2 font-bold text-green-600 underline-offset-8 opacity-80 transition-all delay-75 duration-300 ease-in-out hover:underline hover:opacity-100 dark:text-green-500"
           >
-            Mostrar tudo <ChevronRight size={18} />
+            Mostrar todos <ChevronRight size={18} />
           </Link>
         </div>
 
@@ -80,11 +84,20 @@ export default function ProjectSession() {
                   className="rounded-2xl shadow-2xl shadow-white/10 transition-all delay-75 duration-500 ease-in-out hover:cursor-zoom-in lg:hover:scale-110 xl:-skew-y-3 xl:hover:skew-y-0"
                 />
                 <div className="flex w-full flex-col gap-6 p-8">
-                  <h2 className="text-xl font-bold underline-offset-8 transition-all delay-75 duration-300 ease-in-out hover:underline">
-                    <a target="_blank" href={item.link}>
-                      {item.title}
-                    </a>
-                  </h2>
+                  <div className="flex items-center justify-between">
+                    <h2 className="text-xl font-bold underline-offset-8 transition-all delay-75 duration-300 ease-in-out hover:underline">
+                      <a target="_blank" href={item.link}>
+                        {item.title}
+                      </a>
+                    </h2>
+                    <Link
+                      href={item.linkPage}
+                      className="flex cursor-pointer items-center gap-2 font-bold text-green-600 underline-offset-8 opacity-80 transition-all delay-75 duration-300 ease-in-out hover:underline hover:opacity-100 dark:text-green-500"
+                    >
+                      Saiba mais <ChevronRight size={18} />
+                    </Link>
+                  </div>
+
                   <p className="font-medium opacity-90">{item.description}</p>
                   <div className="flex items-center gap-4">
                     <a href={item.link} target="_blank" className="">
@@ -93,7 +106,7 @@ export default function ProjectSession() {
                         className="flex items-center gap-2 border-2 border-black font-bold transition-all delay-100 duration-300 ease-in-out hover:bg-black hover:text-white dark:border-white dark:hover:bg-white dark:hover:text-black"
                       >
                         <ArrowUpRight size={18} />
-                        Visitar
+                        Visitar site
                       </Button>
                     </a>
                     <a href={item.linkGithub} target="_blank" className="">
