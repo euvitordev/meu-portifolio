@@ -2,13 +2,24 @@ import Header from "@/components/header/header";
 import { ArrowUpRight, ChevronRight, Github } from "lucide-react";
 import Image from "next/image";
 import ImageFreeCalc from "../../../public/images/free-calc-home.png";
-import ImageMimoCep from "../../../public/images/mimo-cep.png";
+import ImageFuiDeCep from "../../../public/images/fui-de-cep.png";
 import ImageHabits from "../../../public/images/habits.jpg";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Projetos() {
   const projectPreview = [
+    {
+      title: "Fui de CEP",
+      description: "Desbloqueie o caminho para a precisão na busca de CEPs!",
+      imagePreview: ImageFuiDeCep,
+      link: "https://fui-de-cep.vercel.app/",
+      linkGithub: "https://github.com/euvitordev/fui-de-cep",
+      nameVisit: "Visitar",
+      data: "2023",
+      linkPage: "/projetos/fui-de-cep",
+      nameDeploy: "Código-fonte",
+    },
     {
       title: "FreeCalc",
       description:
@@ -19,17 +30,6 @@ export default function Projetos() {
       nameVisit: "Visitar",
       data: "2023",
       linkPage: "/projetos/free-calc",
-      nameDeploy: "Código-fonte",
-    },
-    {
-      title: "Mimo CEP",
-      description: "Descubra a nova era da busca de CEP com o Mimo CEP.",
-      imagePreview: ImageMimoCep,
-      link: "https://mimo-cep.vercel.app/",
-      linkGithub: "https://github.com/euvitordev/mimo-cep",
-      nameVisit: "Visitar",
-      data: "2023",
-      linkPage: "/projetos/mimo-cep",
       nameDeploy: "Código-fonte",
     },
     {

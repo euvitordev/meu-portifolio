@@ -1,43 +1,42 @@
 import Header from "@/components/header/header";
 import { ChevronLeft, ChevronRight, Github } from "lucide-react";
 import Image from "next/image";
-import ImageHome from "../../../../public/images/mimo-cep.png";
-import ImagePage from "../../../../public/images/mimo-cep.png";
+import ImageFuiDeCep from "../../../public/images/fui-de-cep.png";
 import Link from "next/link";
 
 export default function Projeto() {
   const projectHeader = [
     {
-      title: "Mimo CEP",
-      description: "Descubra a nova era da busca de CEP com o Mimo CEP.",
-      link: "https://mimo-cep.vercel.app/",
-      linkGithub: "https://github.com/euvitordev/mimo-cep",
+      title: "Fui de CEP",
+      description: "Desbloqueie o caminho para a precisão na busca de CEPs!",
+      imagePreview: ImageFuiDeCep,
+      link: "https://fui-de-cep.vercel.app/",
+      linkGithub: "https://github.com/euvitordev/fui-de-cep",
       nameVisit: "Visitar",
-      data: "2023",
-      linkPage: "/projetos/mimo-cep",
       nameDeploy: "Código-fonte",
+      data: "2023",
+      linkPage: "/projetos/fui-de-cep",
     },
   ];
   const projectMain = [
     {
-      image: ImageHome,
-      description:
-        "Visualização da versão web do aplicativo, que inclui a página inicial com opções disponíveis e o histórico de cálculos realizados.",
-    },
-    {
-      image: ImagePage,
+      image: ImageFuiDeCep,
       description: "Em breve, a descrição estará disponível.",
     },
     {
-      image: ImagePage,
+      image: ImageFuiDeCep,
       description: "Em breve, a descrição estará disponível.",
     },
     {
-      image: ImagePage,
+      image: ImageFuiDeCep,
       description: "Em breve, a descrição estará disponível.",
     },
     {
-      image: ImagePage,
+      image: ImageFuiDeCep,
+      description: "Em breve, a descrição estará disponível.",
+    },
+    {
+      image: ImageFuiDeCep,
       description: "Em breve, a descrição estará disponível.",
     },
   ];
