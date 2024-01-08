@@ -1,7 +1,7 @@
 "use client";
 import { ChevronUp } from "lucide-react";
 import { Button } from "../ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function TopToButton() {
   const [showButton, setShowButton] = useState(false);
@@ -9,18 +9,25 @@ export default function TopToButton() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // Adicionando um comportamento suave de scroll
+      behavior: "smooth",
     });
   };
 
-  // Event listener para mostrar o botão quando a página é rolada para baixo
-  window.onscroll = () => {
-    if (window.scrollY > 300) {
-      setShowButton(true);
-    } else {
-      setShowButton(false);
-    }
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); // Adicionando um array vazio para executar o efeito apenas uma vez no montagem e desmontagem do componente
 
   return (
     <div className="">
