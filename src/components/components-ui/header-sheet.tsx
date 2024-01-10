@@ -80,7 +80,7 @@ export function HeaderSheet({ children }: { children: React.ReactNode }) {
     },
     {
       text: "Instagram",
-      link: "https://www.instagram.com/vitordeev",
+      link: "https://www.instagram.com/euvitorll",
       icon: <Instagram />,
     },
     {
