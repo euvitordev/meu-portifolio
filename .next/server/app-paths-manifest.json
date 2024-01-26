@@ -1,0 +1,8 @@
+{
+  "/page": "app/page.js",
+  "/tecnologias-e-ferramentas/page": "app/tecnologias-e-ferramentas/page.js",
+  "/projetos/page": "app/projetos/page.js",
+  "/projetos/fui-de-cep/page": "app/projetos/fui-de-cep/page.js",
+  "/projetos/free-calc/page": "app/projetos/free-calc/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
+}
